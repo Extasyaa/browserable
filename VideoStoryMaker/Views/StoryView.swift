@@ -1,3 +1,4 @@
+#if canImport(SwiftUI)
 import SwiftUI
 
 struct StoryView: View {
@@ -23,3 +24,4 @@ struct StoryView: View {
 #Preview {
     StoryView().environmentObject(StoryViewModel())
 }
+#endif

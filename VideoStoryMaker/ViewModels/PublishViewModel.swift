@@ -1,4 +1,6 @@
+#if canImport(Combine)
 import Foundation
+import Combine
 
 @MainActor
 class PublishViewModel: ObservableObject {
@@ -15,3 +17,4 @@ class PublishViewModel: ObservableObject {
         }
     }
 }
+#endif

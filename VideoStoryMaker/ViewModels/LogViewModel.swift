@@ -1,3 +1,4 @@
+#if canImport(Combine)
 import Foundation
 import Combine
 
@@ -12,3 +13,4 @@ class LogViewModel: ObservableObject {
             .assign(to: \.$messages, on: self)
     }
 }
+#endif

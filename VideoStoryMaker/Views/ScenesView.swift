@@ -1,5 +1,8 @@
+#if canImport(SwiftUI)
 import SwiftUI
+#if canImport(AppKit)
 import AppKit
+#endif
 
 struct ScenesView: View {
     @EnvironmentObject var storyVM: StoryViewModel
@@ -13,7 +16,8 @@ struct ScenesView: View {
             }
             List(sceneVM.scenes) { scene in
                 HStack {
-                    if let data = scene.imageData, let img = NSImage(data: data) {
+                    if let data = scene.imageData,
+                       let img = NSImage(data: data) {
                         Image(nsImage: img)
                             .resizable()
                             .frame(width: 100, height: 56)
@@ -34,3 +38,4 @@ struct ScenesView: View {
         .environmentObject(StoryViewModel())
         .environmentObject(SceneViewModel())
 }
+#endif

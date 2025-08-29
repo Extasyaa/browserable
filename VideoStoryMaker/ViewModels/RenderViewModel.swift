@@ -1,4 +1,6 @@
+#if canImport(Combine)
 import Foundation
+import Combine
 
 @MainActor
 class RenderViewModel: ObservableObject {
@@ -16,3 +18,4 @@ class RenderViewModel: ObservableObject {
         }
     }
 }
+#endif

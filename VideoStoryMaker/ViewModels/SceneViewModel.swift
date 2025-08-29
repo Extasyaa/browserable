@@ -1,4 +1,6 @@
+#if canImport(Combine)
 import Foundation
+import Combine
 
 @MainActor
 class SceneViewModel: ObservableObject {
@@ -22,3 +24,4 @@ class SceneViewModel: ObservableObject {
         }
     }
 }
+#endif

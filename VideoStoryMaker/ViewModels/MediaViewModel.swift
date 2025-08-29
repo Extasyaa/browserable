@@ -1,4 +1,6 @@
+#if canImport(Combine)
 import Foundation
+import Combine
 
 @MainActor
 class MediaViewModel: ObservableObject {
@@ -18,3 +20,4 @@ class MediaViewModel: ObservableObject {
         }
     }
 }
+#endif

@@ -1,3 +1,4 @@
+#if canImport(SwiftUI)
 import SwiftUI
 
 struct MediaView: View {
@@ -33,3 +34,4 @@ struct MediaView: View {
         .environmentObject(SceneViewModel())
         .environmentObject(MediaViewModel())
 }
+#endif

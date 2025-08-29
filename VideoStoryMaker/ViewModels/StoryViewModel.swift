@@ -1,4 +1,6 @@
+#if canImport(Combine)
 import Foundation
+import Combine
 
 @MainActor
 class StoryViewModel: ObservableObject {
@@ -17,3 +19,4 @@ class StoryViewModel: ObservableObject {
         }
     }
 }
+#endif

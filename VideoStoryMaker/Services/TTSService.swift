@@ -1,3 +1,4 @@
+#if canImport(AVFoundation)
 import Foundation
 import AVFoundation
 
@@ -23,3 +24,14 @@ struct TTSService {
         Logger.shared.log("System TTS playback completed")
     }
 }
+#else
+import Foundation
+
+struct TTSService {
+    static let shared = TTSService()
+
+    func synthesize(_ text: String, to url: URL) async throws {
+        Logger.shared.log("TTS not supported on this platform")
+    }
+}
+#endif

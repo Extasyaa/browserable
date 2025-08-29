@@ -1,3 +1,4 @@
+#if canImport(SwiftUI)
 import SwiftUI
 
 @main
@@ -21,3 +22,4 @@ struct VideoStoryMakerApp: App {
         }
     }
 }
+#endif

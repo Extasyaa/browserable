@@ -1,3 +1,4 @@
+#if canImport(AVFoundation) && canImport(AppKit)
 import Foundation
 import AVFoundation
 import AppKit
@@ -58,3 +59,13 @@ struct VideoRenderer {
         return buffer
     }
 }
+#else
+import Foundation
+
+struct VideoRenderer {
+    func renderVideo(from scenes: [StoryScene], audioURL: URL?, outputURL: URL, overwrite: Bool = false) async throws -> URL {
+        Logger.shared.log("Video rendering not supported on this platform")
+        return outputURL
+    }
+}
+#endif

@@ -1,3 +1,4 @@
+#if canImport(SwiftUI)
 import SwiftUI
 
 struct PublishView: View {
@@ -28,3 +29,4 @@ struct PublishView: View {
         .environmentObject(RenderViewModel())
         .environmentObject(PublishViewModel())
 }
+#endif
