@@ -1,9 +1,17 @@
+# macOS / Xcode
 .DS_Store
 DerivedData/
 .xcworkspace
 xcuserdata/
 *.xcarchive
+
+# CocoaPods (не используем)
 Pods/
+
+# Если рядом вдруг появится Swift Package — не коммитим его манифест
+Package.swift
+
+# Медиа не храним в репозитории
 *.png
 *.jpg
 *.jpeg
@@ -14,6 +22,10 @@ Pods/
 *.wav
 *.mp4
 *.mov
+
+# Выходные артефакты
 output/
 releases/
+
+# Локальные конфиги с ключами
 LocalConfig.plist
