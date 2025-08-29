@@ -1,9 +1,0 @@
-{
-  "apps": [
-    {
-      "name": "ui",
-      "script": "npm",
-      "args": ["run", "build:serve"]
-    }
-  ]
-}
