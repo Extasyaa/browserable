@@ -1,10 +1,11 @@
 import Foundation
+import Combine
 
 @MainActor
-class StoryViewModel: ObservableObject {
+final class StoryViewModel: ObservableObject {
     @Published var tone: String = "Neutral"
     @Published var prompt: String = ""
-    @Published var scenes: [Scene] = []
+    @Published var scenes: [StoryScene] = []
 
     func generateStory() {
         Task {

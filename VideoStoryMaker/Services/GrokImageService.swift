@@ -4,7 +4,7 @@ struct GrokImageService {
     static let shared = GrokImageService()
     private let apiKey = ProcessInfo.processInfo.environment["GROK_API_KEY"]
 
-    func generateImage(for scene: Scene) async throws -> Data? {
+    func generateImage(for scene: StoryScene) async throws -> Data? {
         if apiKey == nil {
             Logger.shared.log("GROK_API_KEY missing, returning placeholder image")
             return loadPlaceholderImageData()

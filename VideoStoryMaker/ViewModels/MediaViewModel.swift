@@ -1,11 +1,12 @@
 import Foundation
+import Combine
 
 @MainActor
-class MediaViewModel: ObservableObject {
+final class MediaViewModel: ObservableObject {
     @Published var audioURL: URL?
-    @Published var scenes: [Scene] = []
+    @Published var scenes: [StoryScene] = []
 
-    func synthesize(for scenes: [Scene]) {
+    func synthesize(for scenes: [StoryScene]) {
         self.scenes = scenes
         Task {
             do {

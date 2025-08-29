@@ -1,13 +1,16 @@
 import Foundation
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 struct ChatGPTService {
     static let shared = ChatGPTService()
     private let apiKey = ProcessInfo.processInfo.environment["OPENAI_API_KEY"]
 
-    func generateStory(tone: String, prompt: String) async throws -> [Scene] {
+    func generateStory(tone: String, prompt: String) async throws -> [StoryScene] {
         if apiKey == nil {
             Logger.shared.log("OPENAI_API_KEY missing, using offline placeholder story")
-            return [Scene(text: "Offline placeholder scene", imageData: nil)]
+            return [StoryScene(text: "Offline placeholder scene", imageData: nil)]
         }
 
         var request = URLRequest(url: URL(string: "https://api.openai.com/v1/chat/completions")!)
@@ -28,6 +31,6 @@ struct ChatGPTService {
 
         // Parse response for scenes; simplified placeholder
         let text = String(data: data, encoding: .utf8) ?? "No response"
-        return [Scene(text: text, imageData: nil)]
+        return [StoryScene(text: text, imageData: nil)]
     }
 }

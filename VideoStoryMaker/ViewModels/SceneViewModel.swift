@@ -1,10 +1,11 @@
 import Foundation
+import Combine
 
 @MainActor
-class SceneViewModel: ObservableObject {
-    @Published var scenes: [Scene] = []
+final class SceneViewModel: ObservableObject {
+    @Published var scenes: [StoryScene] = []
 
-    func load(from scenes: [Scene]) {
+    func load(from scenes: [StoryScene]) {
         self.scenes = scenes
     }
 

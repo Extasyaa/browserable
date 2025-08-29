@@ -1,9 +1,11 @@
 import Foundation
 import AVFoundation
 import AppKit
+import CoreGraphics
+import CoreVideo
 
 struct VideoRenderer {
-    func renderVideo(from scenes: [Scene], audioURL: URL?, outputURL: URL, overwrite: Bool = false) async throws -> URL {
+    func renderVideo(from scenes: [StoryScene], audioURL: URL?, outputURL: URL, overwrite: Bool = false) async throws -> URL {
         if FileManager.default.fileExists(atPath: outputURL.path) && !overwrite {
             Logger.shared.log("Video already exists at \(outputURL.path)")
             return outputURL
@@ -32,17 +34,28 @@ struct VideoRenderer {
         }
 
         input.markAsFinished()
-        await writer.finishWriting()
+
+        // Await completion safely
+        await withCheckedContinuation { (cont: CheckedContinuation<Void, Never>) in
+            writer.finishWriting {
+                cont.resume()
+            }
+        }
+
         Logger.shared.log("Dummy video rendered to \(outputURL.path)")
         return outputURL
     }
 
     private func pixelBufferFrom(color: NSColor) -> CVPixelBuffer {
-        let attrs = [kCVPixelBufferCGImageCompatibilityKey: true,
-                     kCVPixelBufferCGBitmapContextCompatibilityKey: true] as CFDictionary
+        let attrs = [
+            kCVPixelBufferCGImageCompatibilityKey: true,
+            kCVPixelBufferCGBitmapContextCompatibilityKey: true
+        ] as CFDictionary
+
         var buffer: CVPixelBuffer!
         CVPixelBufferCreate(kCFAllocatorDefault, 1920, 1080, kCVPixelFormatType_32ARGB, attrs, &buffer)
         CVPixelBufferLockBaseAddress(buffer, [])
+
         let context = CGContext(
             data: CVPixelBufferGetBaseAddress(buffer),
             width: 1920,
@@ -52,8 +65,10 @@ struct VideoRenderer {
             space: CGColorSpaceCreateDeviceRGB(),
             bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue
         )!
+
         context.setFillColor(color.cgColor)
         context.fill(CGRect(x: 0, y: 0, width: 1920, height: 1080))
+
         CVPixelBufferUnlockBaseAddress(buffer, [])
         return buffer
     }
