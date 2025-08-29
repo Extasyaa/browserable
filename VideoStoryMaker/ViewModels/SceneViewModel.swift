@@ -1,9 +1,8 @@
-#if canImport(Combine)
 import Foundation
 import Combine
 
 @MainActor
-class SceneViewModel: ObservableObject {
+final class SceneViewModel: ObservableObject {
     @Published var scenes: [StoryScene] = []
 
     func load(from scenes: [StoryScene]) {
@@ -24,4 +23,3 @@ class SceneViewModel: ObservableObject {
         }
     }
 }
-#endif

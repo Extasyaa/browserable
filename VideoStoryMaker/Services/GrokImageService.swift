@@ -14,7 +14,9 @@ struct GrokImageService {
     }
 
     private func loadPlaceholderImageData() -> Data? {
-        // Return nil when no offline image is available.
-        nil
+        if let url = Bundle.main.url(forResource: "AppIcon", withExtension: "png") {
+            return try? Data(contentsOf: url)
+        }
+        return nil
     }
 }

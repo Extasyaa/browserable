@@ -1,5 +1,12 @@
 {
-  "images": [],
+  "images": [
+    {
+      "idiom": "mac",
+      "size": "128x128",
+      "scale": "1x",
+      "filename": "AppIcon.png"
+    }
+  ],
   "info": {
     "version": 1,
     "author": "xcode"

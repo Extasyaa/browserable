@@ -1,4 +1,3 @@
-#if canImport(Combine)
 import Foundation
 import Combine
 
@@ -31,14 +30,3 @@ final class Logger: ObservableObject {
         }
     }
 }
-#else
-import Foundation
-
-final class Logger {
-    static let shared = Logger()
-    private init() {}
-    func log(_ message: String) {
-        print(message)
-    }
-}
-#endif

@@ -1,9 +1,8 @@
-#if canImport(Combine)
 import Foundation
 import Combine
 
 @MainActor
-class MediaViewModel: ObservableObject {
+final class MediaViewModel: ObservableObject {
     @Published var audioURL: URL?
     @Published var scenes: [StoryScene] = []
 
@@ -20,4 +19,3 @@ class MediaViewModel: ObservableObject {
         }
     }
 }
-#endif

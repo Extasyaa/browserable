@@ -1,4 +1,3 @@
-#if canImport(SwiftUI)
 import SwiftUI
 
 struct LogsView: View {
@@ -18,4 +17,3 @@ struct LogsView: View {
 #Preview {
     LogsView().environmentObject(LogViewModel())
 }
-#endif
