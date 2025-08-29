@@ -649,8 +649,8 @@
 			<dict>
 				<key>MACOSX_DEPLOYMENT_TARGET</key>
 				<string>13.0</string>
-                                <key>SWIFT_VERSION</key>
-                                <string>5.9</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.9</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -663,8 +663,8 @@
 			<dict>
 				<key>MACOSX_DEPLOYMENT_TARGET</key>
 				<string>13.0</string>
-                                <key>SWIFT_VERSION</key>
-                                <string>5.9</string>
+				<key>SWIFT_VERSION</key>
+				<string>5.9</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -695,14 +695,14 @@
 				<string>13.0</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
 				<string>com.example.VideoStoryMaker</string>
-                                <key>PRODUCT_NAME</key>
-                                <string>$(TARGET_NAME)</string>
-                                <key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-                                <string></string>
-                                <key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
-                                <string></string>
-                                <key>SWIFT_VERSION</key>
-                                <string>5.9</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string></string>
+				<key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
+				<string></string>
+				<key>SWIFT_VERSION</key>
+				<string>5.9</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
@@ -719,14 +719,14 @@
 				<string>13.0</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
 				<string>com.example.VideoStoryMaker</string>
-                                <key>PRODUCT_NAME</key>
-                                <string>$(TARGET_NAME)</string>
-                                <key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-                                <string></string>
-                                <key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
-                                <string></string>
-                                <key>SWIFT_VERSION</key>
-                                <string>5.9</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string></string>
+				<key>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</key>
+				<string></string>
+				<key>SWIFT_VERSION</key>
+				<string>5.9</string>
 			</dict>
 			<key>isa</key>
 			<string>XCBuildConfiguration</string>
